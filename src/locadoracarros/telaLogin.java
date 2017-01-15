@@ -5,13 +5,11 @@
  */
 package locadoracarros;
 
-import javax.swing.JOptionPane;
-
 /**
  *
  * @author edunativa
  */
-public class telaLogin extends javax.swing.JFrame {
+public class telaLogin extends javax.swing.JFrame{
 
     /**
      * Creates new form telaLogin
@@ -65,6 +63,11 @@ public class telaLogin extends javax.swing.JFrame {
         });
 
         jBClienteEntrar.setText("ClienteEntrar");
+        jBClienteEntrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBClienteEntrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -145,6 +148,17 @@ public class telaLogin extends javax.swing.JFrame {
            
         }
     }//GEN-LAST:event_jb_EntrarActionPerformed
+
+    private void jBClienteEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBClienteEntrarActionPerformed
+        TelaPrincipal tela = new TelaPrincipal();
+       tela.setVisible(true);
+      
+       
+       
+       
+            
+       
+    }//GEN-LAST:event_jBClienteEntrarActionPerformed
 
     /**
      * @param args the command line arguments

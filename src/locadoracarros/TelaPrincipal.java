@@ -142,8 +142,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonFormasPagramento = new javax.swing.ButtonGroup();
-        jTabbedPane6 = new javax.swing.JTabbedPane();
-        jTabbedPane7 = new javax.swing.JTabbedPane();
+        jTPAreas = new javax.swing.JTabbedPane();
+        jTPAreaCadastroCliente = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tbCliente = new javax.swing.JTable();
@@ -171,11 +171,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jRadioButtonCartaoAVista = new javax.swing.JRadioButton();
         jRadioButtonCartao = new javax.swing.JRadioButton();
         jFormattedCelular = new javax.swing.JFormattedTextField();
-        jTabbedPane8 = new javax.swing.JTabbedPane();
+        jTPCadVeiculos = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
-        jTabbedPane9 = new javax.swing.JTabbedPane();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema LocaCar");
@@ -459,9 +456,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(10, Short.MAX_VALUE))
         );
 
-        jTabbedPane7.addTab("Lista de Clientes", jPanel1);
+        jTPAreaCadastroCliente.addTab("Lista de Clientes", jPanel1);
 
-        jTabbedPane6.addTab("Cadastro Cliente", jTabbedPane7);
+        jTPAreas.addTab("Cadastro Cliente", jTPAreaCadastroCliente);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -474,42 +471,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addGap(0, 498, Short.MAX_VALUE)
         );
 
-        jTabbedPane8.addTab("Lista de Veiculos", jPanel2);
+        jTPCadVeiculos.addTab("Lista de Veiculos", jPanel2);
 
-        jTabbedPane6.addTab("Cad Veiculos", jTabbedPane8);
-
-        jLabel3.setText("jLabel3");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel3)
-                .addContainerGap(522, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jLabel3)
-                .addContainerGap(468, Short.MAX_VALUE))
-        );
-
-        jTabbedPane9.addTab("Tabela de Preços", jPanel3);
-
-        jTabbedPane6.addTab("Tab Veiculos", jTabbedPane9);
+        jTPAreas.addTab("Cad Veiculos", jTPCadVeiculos);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane6)
+            .addComponent(jTPAreas)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane6)
+            .addComponent(jTPAreas)
         );
 
         pack();
@@ -652,7 +626,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField jFormattedCelular;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -661,17 +634,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelNome;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JRadioButton jRadioButtonAVista;
     private javax.swing.JRadioButton jRadioButtonCartao;
     private javax.swing.JRadioButton jRadioButtonCartaoAVista;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTEndereco;
     private javax.swing.JTextField jTNumero;
-    private javax.swing.JTabbedPane jTabbedPane6;
-    private javax.swing.JTabbedPane jTabbedPane7;
-    private javax.swing.JTabbedPane jTabbedPane8;
-    private javax.swing.JTabbedPane jTabbedPane9;
+    private javax.swing.JTabbedPane jTPAreaCadastroCliente;
+    private javax.swing.JTabbedPane jTPAreas;
+    private javax.swing.JTabbedPane jTPCadVeiculos;
     private javax.swing.JTextField jtIdade;
     private javax.swing.JTextField jtNome;
     private javax.swing.JTable tbCliente;
