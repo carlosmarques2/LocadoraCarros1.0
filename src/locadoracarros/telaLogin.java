@@ -1,13 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package locadoracarros;
 
 /**
  *
- * @author edunativa
+ * @author Eduardo Paiva
  */
 public class telaLogin extends javax.swing.JFrame{
 
@@ -27,105 +23,69 @@ public class telaLogin extends javax.swing.JFrame{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jLabelUsuario = new javax.swing.JLabel();
+        jLabelSenha = new javax.swing.JLabel();
         jTextFieldUsuario = new javax.swing.JTextField();
         jPasswordFieldSenha = new javax.swing.JPasswordField();
-        jb_Entrar = new javax.swing.JButton();
+        jb_EntrarGerente = new javax.swing.JButton();
         jBClienteEntrar = new javax.swing.JButton();
+        javax.swing.JLabel jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login de Entrada");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Usuário: ");
+        jLabel1.setFont(new java.awt.Font("URW Gothic L", 1, 36)); // NOI18N
+        jLabel1.setText("LocadoraCAR");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, 250, -1));
 
-        jLabel2.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel2.setText("Senha: ");
+        jLabelUsuario.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
+        jLabelUsuario.setText("Usuário: ");
+        getContentPane().add(jLabelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 80, -1));
+
+        jLabelSenha.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
+        jLabelSenha.setText("Senha: ");
+        getContentPane().add(jLabelSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 70, -1));
 
         jTextFieldUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldUsuarioActionPerformed(evt);
             }
         });
+        getContentPane().add(jTextFieldUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 220, -1));
 
         jPasswordFieldSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPasswordFieldSenhaActionPerformed(evt);
             }
         });
+        getContentPane().add(jPasswordFieldSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 220, -1));
 
-        jb_Entrar.setText("Entrar");
-        jb_Entrar.addActionListener(new java.awt.event.ActionListener() {
+        jb_EntrarGerente.setText("Gerente Entrar");
+        jb_EntrarGerente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jb_EntrarActionPerformed(evt);
+                jb_EntrarGerenteActionPerformed(evt);
             }
         });
+        getContentPane().add(jb_EntrarGerente, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 128, 39));
 
-        jBClienteEntrar.setText("ClienteEntrar");
+        jBClienteEntrar.setText("Cliente Entrar");
+        jBClienteEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jBClienteEntrarMouseEntered(evt);
+            }
+        });
         jBClienteEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBClienteEntrarActionPerformed(evt);
             }
         });
+        getContentPane().add(jBClienteEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 310, 129, 39));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jPasswordFieldSenha))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(jb_Entrar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(44, 44, 44)
-                        .addComponent(jBClienteEntrar)))
-                .addContainerGap(69, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(91, 91, 91)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextFieldUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jPasswordFieldSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jb_Entrar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBClienteEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(68, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/locadoracarros/Imagens/fundoLogin.jpg"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, 390));
 
         pack();
         setLocationRelativeTo(null);
@@ -139,7 +99,7 @@ public class telaLogin extends javax.swing.JFrame{
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordFieldSenhaActionPerformed
 
-    private void jb_EntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_EntrarActionPerformed
+    private void jb_EntrarGerenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_EntrarGerenteActionPerformed
         if(jTextFieldUsuario.getText().equals("gerente") && jPasswordFieldSenha.getText().equals("admin")){
         locadoracarros.TelaPrincipal tela1 = new locadoracarros.TelaPrincipal();
         tela1.setVisible(true); //abrindo o tela Pricipal
@@ -147,10 +107,10 @@ public class telaLogin extends javax.swing.JFrame{
         }else{
            
         }
-    }//GEN-LAST:event_jb_EntrarActionPerformed
+    }//GEN-LAST:event_jb_EntrarGerenteActionPerformed
 
     private void jBClienteEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBClienteEntrarActionPerformed
-        TelaPrincipal tela = new TelaPrincipal();
+        TelaTabelaVeiculos tela = new TelaTabelaVeiculos();
        tela.setVisible(true);
       
        
@@ -159,6 +119,10 @@ public class telaLogin extends javax.swing.JFrame{
             
        
     }//GEN-LAST:event_jBClienteEntrarActionPerformed
+
+    private void jBClienteEntrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBClienteEntrarMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBClienteEntrarMouseEntered
 
     /**
      * @param args the command line arguments
@@ -198,10 +162,10 @@ public class telaLogin extends javax.swing.JFrame{
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBClienteEntrar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabelSenha;
+    private javax.swing.JLabel jLabelUsuario;
     private javax.swing.JPasswordField jPasswordFieldSenha;
     private javax.swing.JTextField jTextFieldUsuario;
-    private javax.swing.JButton jb_Entrar;
+    private javax.swing.JButton jb_EntrarGerente;
     // End of variables declaration//GEN-END:variables
 }

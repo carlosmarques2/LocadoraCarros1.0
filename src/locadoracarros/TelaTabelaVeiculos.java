@@ -29,7 +29,7 @@ public class TelaTabelaVeiculos extends javax.swing.JFrame {
 
         TituloTelaTabVeiculos = new javax.swing.JLabel();
         jPanelCatPopular = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        carro1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -42,8 +42,18 @@ public class TelaTabelaVeiculos extends javax.swing.JFrame {
 
         jPanelCatPopular.setBorder(javax.swing.BorderFactory.createTitledBorder("Carros Populares"));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/locadoracarros/Imagens/fiat uno 2015.jpg"))); // NOI18N
-        jLabel1.setText("carroP1");
+        carro1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/locadoracarros/Imagens/fiat uno 2015.jpg"))); // NOI18N
+        carro1.setText("carroP1");
+        carro1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                carro1FocusGained(evt);
+            }
+        });
+        carro1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                carro1MousePressed(evt);
+            }
+        });
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/locadoracarros/Imagens/fiatbravo.jpg"))); // NOI18N
         jLabel2.setText("carroP3");
@@ -57,7 +67,7 @@ public class TelaTabelaVeiculos extends javax.swing.JFrame {
             jPanelCatPopularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelCatPopularLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(carro1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45)
@@ -68,7 +78,7 @@ public class TelaTabelaVeiculos extends javax.swing.JFrame {
             jPanelCatPopularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelCatPopularLayout.createSequentialGroup()
                 .addGroup(jPanelCatPopularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
+                    .addComponent(carro1)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 37, Short.MAX_VALUE))
@@ -100,6 +110,14 @@ public class TelaTabelaVeiculos extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void carro1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_carro1FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_carro1FocusGained
+
+    private void carro1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carro1MousePressed
+        
+    }//GEN-LAST:event_carro1MousePressed
 
     /**
      * @param args the command line arguments
@@ -138,7 +156,7 @@ public class TelaTabelaVeiculos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel TituloTelaTabVeiculos;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel carro1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanelCatPopular;
