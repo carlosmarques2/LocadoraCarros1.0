@@ -112,6 +112,7 @@ public class telaLogin extends javax.swing.JFrame{
     private void jBClienteEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBClienteEntrarActionPerformed
         TelaTabelaVeiculos tela = new TelaTabelaVeiculos();
        tela.setVisible(true);
+       dispose();
       
        
        
