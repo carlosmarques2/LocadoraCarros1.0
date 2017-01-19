@@ -8,19 +8,21 @@ import java.util.Date;
  */
 public class Veiculos {
     private String Marca;
+    private String Modelo;
     private String placa;
+    private String nChassi;
     private Date datalocacao;
     private float vlrDiaria;
     private int qntDiasLocado;
     
     //Construtor
 
-    public Veiculos(String Marca, String placa, Date datalocacao, float vlrDiaria, int qntDiasLocado) {
-        this.Marca = Marca;
+    public Veiculos(String Marca, String Modelo, String placa, String nChassi){
+        this.Modelo = Marca;
+        this.Marca = Modelo;
         this.placa = placa;
-        this.datalocacao = datalocacao;
-        this.vlrDiaria = vlrDiaria;
-        this.qntDiasLocado = qntDiasLocado;
+        this.nChassi = nChassi;
+        
     }
     
     //Metodos acessores
@@ -32,6 +34,14 @@ public class Veiculos {
     public void setMarca(String Marca) {
         this.Marca = Marca;
     }
+    
+    public String getModelo(){
+        return Modelo;
+    }
+    
+    public void setModelo(String modelo){
+        this.Modelo = modelo;
+    }
 
     public String getPlaca() {
         return placa;
@@ -39,6 +49,14 @@ public class Veiculos {
 
     public void setPlaca(String placa) {
         this.placa = placa;
+    }
+    
+    public String getNChassi(){
+        return nChassi;
+    }
+    
+    public void setNChassi(String nchassi){
+        this.nChassi = nchassi;
     }
 
     public Date getDatalocacao() {

@@ -6,7 +6,12 @@
 package locadoracarros;
 
 import java.awt.Color;
+import java.io.File;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.JPanel;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -32,14 +37,37 @@ public class TelaPrincipal extends javax.swing.JFrame {
             
             
         }
+        
+        
+        ArrayList<Veiculos> lst_Veiculos;
+        String acao;
+        public void CarregarTabelaVeiculos(){
+            DefaultTableModel modeloVeiculo;
+            modeloVeiculo = new DefaultTableModel(new Object[]{"Marca", "Modelo","Placa","Nº Chassi"},0);
+            
+            for (int i = 0; i < lst_Veiculos.size(); i++) {
+                modeloVeiculo.addRow(new Object[]{lst_Veiculos.get(i).getMarca(),
+                                           lst_Veiculos.get(i).getModelo(),
+                                           lst_Veiculos.get(i).getPlaca(),
+                                           lst_Veiculos.get(i).getNChassi()});
+                                        
+                
+            }
+            jTabVeiculos.setModel(modeloVeiculo);
+            
+            
+        }
     /**
      * Creates new form TelaPrincipal
      */
     public TelaPrincipal() {
         initComponents();
         lst_Clientes = new ArrayList();
+        lst_Veiculos = new ArrayList();
         tipo = "navegar";
+        acao = "navegar";
         manipularInterface();
+        manipularCadVeiculos();
     }
     
      public void manipularInterface(){
@@ -131,6 +159,90 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 System.out.println("Tipo Inválido!\n");
         }
     }
+     
+     
+     
+     //metodo para  Manipular o Cadastro dos Veiculos
+     public void manipularCadVeiculos(){
+        switch(acao){
+            case "navegar":
+                    jBNovoCad.setEnabled(true);
+                    jBEditarCad.setEnabled(false);
+                    jBExcluirCad.setEnabled(false);
+                    jBotaoSalvar.setEnabled(false);
+                    jBotaoCancelar.setEnabled(false);
+        
+                    jTMarca.setEnabled(false);
+                    jTModelo.setEnabled(false);
+                    jTPlaca.setEnabled(false);
+                    jTChassi.setEnabled(false);
+                                        
+                break;
+            case "novo":
+                    jBNovoCad.setEnabled(false);
+                    jBEditarCad.setEnabled(false);
+                    jBExcluirCad.setEnabled(false);
+                    jBotaoSalvar.setEnabled(true);
+                    jBotaoCancelar.setEnabled(true);
+                
+                    jTMarca.setEnabled(true);
+                    jTModelo.setEnabled(true);
+                    jTPlaca.setEnabled(true);
+                    jTChassi.setEnabled(true);
+                    
+                    jTMarca.setText("");
+                    jTModelo.setText("");
+                    jTPlaca.setText("");
+                    jTChassi.setText("");
+                break;
+            case "editar":
+                           
+              
+                    jBNovoCad.setEnabled(false);
+                    jBEditarCad.setEnabled(false);
+                    jBExcluirCad.setEnabled(false);
+                    jBotaoSalvar.setEnabled(true);
+                    jBotaoCancelar.setEnabled(true);
+        
+                    jTMarca.setEnabled(true);
+                    jTModelo.setEnabled(true);
+                    jTPlaca.setEnabled(true);
+                    jTChassi.setEnabled(true);
+                    
+                break;
+            case "excluir":
+                    jBNovoCad.setEnabled(true);
+                    jBEditarCad.setEnabled(false);
+                    jBExcluirCad.setEnabled(false);
+                    jBotaoSalvar.setEnabled(false);
+                    jBotaoCancelar.setEnabled(true);
+                
+                    jTMarca.setEnabled(false);
+                    jTModelo.setEnabled(false);
+                    jTPlaca.setEnabled(false);
+                    jTChassi.setEnabled(false);
+                    
+                    
+                break;
+            case "selecao":
+                    jBNovoCad.setEnabled(true);
+                    jBEditarCad.setEnabled(true);
+                    jBExcluirCad.setEnabled(true);
+                    jBotaoSalvar.setEnabled(false);
+                    jBotaoCancelar.setEnabled(false);
+                
+                    jTMarca.setEnabled(false);
+                    jTModelo.setEnabled(false);
+                    jTPlaca.setEnabled(false);
+                    jTChassi.setEnabled(false);
+        
+                   
+                break;
+                
+            default:
+                System.out.println("Tipo Inválido!\n");
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -173,6 +285,26 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jFormattedCelular = new javax.swing.JFormattedTextField();
         jTPCadVeiculos = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jTMarca = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jTModelo = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jTPlaca = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jPanelImagem = new javax.swing.JPanel();
+        jLInserirImg = new javax.swing.JLabel();
+        jBInserirFoto = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        jTChassi = new javax.swing.JTextField();
+        jBNovoCad = new javax.swing.JButton();
+        jBEditarCad = new javax.swing.JButton();
+        jBExcluirCad = new javax.swing.JButton();
+        jPanelListaVeiculos = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTabVeiculos = new javax.swing.JTable();
+        jBotaoSalvar = new javax.swing.JButton();
+        jBotaoCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema LocaCar");
@@ -344,7 +476,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                                 .addComponent(jRadioButtonCartao)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelCadastroClienteLayout.createSequentialGroup()
-                        .addGap(0, 11, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(PainelCadastroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PainelCadastroClienteLayout.createSequentialGroup()
                                 .addComponent(jLabelNome)
@@ -397,11 +529,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(jFormattedCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PainelCadastroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
+                .addGroup(PainelCadastroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6)
-                    .addComponent(jTNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PainelCadastroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel5)
+                        .addComponent(jLabel6)
+                        .addComponent(jTNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(PainelCadastroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
@@ -453,25 +586,200 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addComponent(btnExcluir))
                 .addGap(18, 18, 18)
                 .addComponent(PainelCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         jTPAreaCadastroCliente.addTab("Lista de Clientes", jPanel1);
 
         jTPAreas.addTab("Cadastro Cliente", jTPAreaCadastroCliente);
 
+        jLabel3.setText("Marca: ");
+
+        jLabel9.setText("Modelo: ");
+
+        jLabel10.setText("Placa; ");
+
+        jLabel11.setText("Inserir Foto do Veiculo");
+
+        jPanelImagem.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(102, 102, 102), null));
+        jPanelImagem.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLInserirImg.setName(""); // NOI18N
+        jPanelImagem.add(jLInserirImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 2, 190, 150));
+
+        jBInserirFoto.setText("Inserir Foto");
+        jBInserirFoto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBInserirFotoActionPerformed(evt);
+            }
+        });
+        jPanelImagem.add(jBInserirFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, -1));
+
+        jLabel12.setText("Nº do Chassi: ");
+
+        jBNovoCad.setText("NOVO");
+        jBNovoCad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBNovoCadActionPerformed(evt);
+            }
+        });
+
+        jBEditarCad.setText("EDITAR");
+        jBEditarCad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBEditarCadActionPerformed(evt);
+            }
+        });
+
+        jBExcluirCad.setText("EXCLUIR");
+        jBExcluirCad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBExcluirCadActionPerformed(evt);
+            }
+        });
+
+        jTabVeiculos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Marca", "Modelo", "Placa", "Nº Chassi"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jTabVeiculos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTabVeiculosMouseClicked(evt);
+            }
+        });
+        jScrollPane3.setViewportView(jTabVeiculos);
+
+        jBotaoSalvar.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
+        jBotaoSalvar.setText("Salvar");
+        jBotaoSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBotaoSalvarActionPerformed(evt);
+            }
+        });
+
+        jBotaoCancelar.setText("Cancelar");
+        jBotaoCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBotaoCancelarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanelListaVeiculosLayout = new javax.swing.GroupLayout(jPanelListaVeiculos);
+        jPanelListaVeiculos.setLayout(jPanelListaVeiculosLayout);
+        jPanelListaVeiculosLayout.setHorizontalGroup(
+            jPanelListaVeiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelListaVeiculosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelListaVeiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 543, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelListaVeiculosLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jBotaoSalvar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jBotaoCancelar)))
+                .addContainerGap())
+        );
+        jPanelListaVeiculosLayout.setVerticalGroup(
+            jPanelListaVeiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelListaVeiculosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addGroup(jPanelListaVeiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBotaoSalvar)
+                    .addComponent(jBotaoCancelar))
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 596, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(370, 370, 370)
+                        .addComponent(jLabel11))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                            .addComponent(jLabel3)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(jTMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                            .addComponent(jLabel12)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(jTChassi))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                            .addComponent(jLabel9)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(jTModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(jLabel10)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(jTPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jBNovoCad, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jBEditarCad, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jBExcluirCad, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(18, 18, 18)
+                                .addComponent(jPanelImagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jPanelListaVeiculos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 498, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel11)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanelImagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(jTMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(jTModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10)
+                            .addComponent(jTPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(6, 6, 6)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12)
+                            .addComponent(jTChassi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(38, 38, 38)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jBNovoCad)
+                            .addComponent(jBEditarCad)
+                            .addComponent(jBExcluirCad))))
+                .addGap(23, 23, 23)
+                .addComponent(jPanelListaVeiculos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        jTPCadVeiculos.addTab("Lista de Veiculos", jPanel2);
+        jTPCadVeiculos.addTab("Cadastro", jPanel2);
 
         jTPAreas.addTab("Cad Veiculos", jTPCadVeiculos);
 
@@ -505,7 +813,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_tbClienteMouseClicked
 
     private void btnNovoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNovoMouseClicked
-
+        
     }//GEN-LAST:event_btnNovoMouseClicked
 
     private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
@@ -578,6 +886,88 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jtNomeActionPerformed
 
+    private void jBInserirFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBInserirFotoActionPerformed
+        JFileChooser chamarPesqImagem = new JFileChooser(); //Instanciando a classe jFileChooser
+        chamarPesqImagem.setDialogTitle("Pesquisar Foto do Veiculo"); //Criando um titulo para Janela de Pesquisa
+        chamarPesqImagem.setFileSelectionMode(JFileChooser.FILES_ONLY); //serve para filtrar mais não selecionar diretórios
+
+        FileNameExtensionFilter filtrar = new FileNameExtensionFilter("Imagens", "jpg","png"); // filtrar pela extrensão do arquivo;
+        chamarPesqImagem.setFileFilter(filtrar); //chamando o metodo para filtrar;
+
+        int retornarImagem = chamarPesqImagem.showOpenDialog(this); //Abrindo a Tela na Classe  atual;
+        if(retornarImagem == JFileChooser.APPROVE_OPTION){
+            // metodo para quando o abrir for selecionado retornar;
+            File arquivo = chamarPesqImagem.getSelectedFile(); //pegar a url da imagem e colocar em arquivo;
+            jLInserirImg.setIcon(new ImageIcon(arquivo.getPath())); //abrindo a imagem no Label
+        }   
+        
+    }//GEN-LAST:event_jBInserirFotoActionPerformed
+
+    private void jBNovoCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBNovoCadActionPerformed
+        jPanelListaVeiculos.setVisible(true);
+        acao = "novo";
+        manipularCadVeiculos();
+    }//GEN-LAST:event_jBNovoCadActionPerformed
+
+    private void jBEditarCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEditarCadActionPerformed
+        jPanelListaVeiculos.setVisible(true);
+        acao = "editar";
+        manipularCadVeiculos();
+    }//GEN-LAST:event_jBEditarCadActionPerformed
+
+    private void jBExcluirCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBExcluirCadActionPerformed
+       int indexs = jTabVeiculos.getSelectedRow();
+        if(indexs >= 0 && indexs < lst_Veiculos.size()){
+            lst_Veiculos.remove(indexs);
+        }
+        CarregarTabelaVeiculos();
+        acao = "navegar";
+        manipularCadVeiculos();
+    }//GEN-LAST:event_jBExcluirCadActionPerformed
+
+    private void jBotaoCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotaoCancelarActionPerformed
+        jBotaoSalvar.setEnabled(false);
+        jBotaoCancelar.setEnabled(false);
+
+        jTMarca.setText("");
+        jTModelo.setText("");
+        jTPlaca.setText("");
+        jTChassi.setText("");
+    }//GEN-LAST:event_jBotaoCancelarActionPerformed
+
+    private void jBotaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotaoSalvarActionPerformed
+
+        if(acao.equals("novo")){
+            Veiculos v =  new Veiculos(jTMarca.getText(), jTModelo.getText(), jTPlaca.getText(), jTChassi.getText());
+            lst_Veiculos.add(v);
+
+        } else if(acao.equals("editar")){
+            int indexs = jTabVeiculos.getSelectedRow();
+            lst_Veiculos.get(indexs).setMarca(jTMarca.getText());
+            lst_Veiculos.get(indexs).setModelo(jTModelo.getText());
+            lst_Veiculos.get(indexs).setPlaca(jTPlaca.getText());
+            lst_Veiculos.get(indexs).setNChassi(jTChassi.getText());
+
+        }
+        CarregarTabelaVeiculos();
+        acao = "navegar";
+        manipularCadVeiculos();
+    }//GEN-LAST:event_jBotaoSalvarActionPerformed
+
+    private void jTabVeiculosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabVeiculosMouseClicked
+        int indexs = jTabVeiculos.getSelectedRow();
+        if(indexs >=0 && indexs < lst_Veiculos.size()){
+            Veiculos v = lst_Veiculos.get(indexs);
+            jTMarca.setText(v.getMarca());
+            jTModelo.setText(v.getModelo());
+            jTPlaca.setText(v.getPlaca());
+            jTChassi.setText(v.getNChassi());
+
+            acao = "selecao";
+            manipularCadVeiculos();
+        }
+    }//GEN-LAST:event_jTabVeiculosMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -621,28 +1011,48 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnNovo;
     private javax.swing.JButton btnSalvar;
     private javax.swing.ButtonGroup buttonFormasPagramento;
+    private javax.swing.JButton jBEditarCad;
+    private javax.swing.JButton jBExcluirCad;
+    private javax.swing.JButton jBInserirFoto;
+    private javax.swing.JButton jBNovoCad;
+    private javax.swing.JButton jBotaoCancelar;
+    private javax.swing.JButton jBotaoSalvar;
     private javax.swing.JComboBox<String> jComboBoxCidades;
     private javax.swing.JFormattedTextField jFormattedCPF;
     private javax.swing.JFormattedTextField jFormattedCelular;
+    private javax.swing.JLabel jLInserirImg;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelNome;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanelImagem;
+    private javax.swing.JPanel jPanelListaVeiculos;
     private javax.swing.JRadioButton jRadioButtonAVista;
     private javax.swing.JRadioButton jRadioButtonCartao;
     private javax.swing.JRadioButton jRadioButtonCartaoAVista;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTextField jTChassi;
     private javax.swing.JTextField jTEndereco;
+    private javax.swing.JTextField jTMarca;
+    private javax.swing.JTextField jTModelo;
     private javax.swing.JTextField jTNumero;
     private javax.swing.JTabbedPane jTPAreaCadastroCliente;
     private javax.swing.JTabbedPane jTPAreas;
     private javax.swing.JTabbedPane jTPCadVeiculos;
+    private javax.swing.JTextField jTPlaca;
+    private javax.swing.JTable jTabVeiculos;
     private javax.swing.JTextField jtIdade;
     private javax.swing.JTextField jtNome;
     private javax.swing.JTable tbCliente;

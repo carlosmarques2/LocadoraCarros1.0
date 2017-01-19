@@ -5,8 +5,7 @@
  */
 package locadoracarros;
 
-import javax.swing.JLabel;
-import javax.swing.JToggleButton;
+import javax.swing.JInternalFrame;
 
 /**
  *
@@ -56,6 +55,9 @@ public class TelaTabelaVeiculos extends javax.swing.JFrame {
         jBCalc1 = new javax.swing.JButton();
         jBCalc2 = new javax.swing.JButton();
         jBCalc3 = new javax.swing.JButton();
+        jBotaoLocar = new javax.swing.JButton();
+        janelaInterna1 = new javax.swing.JInternalFrame();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tabela de Veiculos");
@@ -63,9 +65,12 @@ public class TelaTabelaVeiculos extends javax.swing.JFrame {
         setMaximumSize(new java.awt.Dimension(1024, 768));
         setMinimumSize(new java.awt.Dimension(800, 600));
         setName("TelaTabela"); // NOI18N
+        getContentPane().setLayout(null);
 
         TituloTelaTabVeiculos.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         TituloTelaTabVeiculos.setText("LocadoraCar - Tabela de Veiculos");
+        getContentPane().add(TituloTelaTabVeiculos);
+        TituloTelaTabVeiculos.setBounds(24, 27, 318, 24);
 
         jPanelCatPopular.setBorder(javax.swing.BorderFactory.createTitledBorder("Carros Populares"));
 
@@ -186,6 +191,13 @@ public class TelaTabelaVeiculos extends javax.swing.JFrame {
             }
         });
 
+        jBotaoLocar.setText("Locar");
+        jBotaoLocar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBotaoLocarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelCatPopularLayout = new javax.swing.GroupLayout(jPanelCatPopular);
         jPanelCatPopular.setLayout(jPanelCatPopularLayout);
         jPanelCatPopularLayout.setHorizontalGroup(
@@ -253,6 +265,10 @@ public class TelaTabelaVeiculos extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jBCalc3)))))
                 .addGap(36, 36, 36))
+            .addGroup(jPanelCatPopularLayout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(jBotaoLocar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelCatPopularLayout.setVerticalGroup(
             jPanelCatPopularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -288,37 +304,34 @@ public class TelaTabelaVeiculos extends javax.swing.JFrame {
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabelValorCarro3)
                     .addComponent(jLabelValorCarro2)
-                    .addGroup(jPanelCatPopularLayout.createSequentialGroup()
-                        .addComponent(jLabelValorCarro1)
-                        .addGap(8, 8, 8)))
-                .addGap(0, 22, Short.MAX_VALUE))
+                    .addComponent(jLabelValorCarro1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jBotaoLocar))
         );
 
         carro1.getAccessibleContext().setAccessibleDescription("");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(TituloTelaTabVeiculos))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(jPanelCatPopular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(17, Short.MAX_VALUE))
+        getContentPane().add(jPanelCatPopular);
+        jPanelCatPopular.setBounds(16, 65, 767, 298);
+
+        janelaInterna1.setTitle("Locação > Formas de Pagamento");
+        janelaInterna1.setVisible(false);
+
+        javax.swing.GroupLayout janelaInterna1Layout = new javax.swing.GroupLayout(janelaInterna1.getContentPane());
+        janelaInterna1.getContentPane().setLayout(janelaInterna1Layout);
+        janelaInterna1Layout.setHorizontalGroup(
+            janelaInterna1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(TituloTelaTabVeiculos)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelCatPopular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(339, Short.MAX_VALUE))
+        janelaInterna1Layout.setVerticalGroup(
+            janelaInterna1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
+
+        getContentPane().add(janelaInterna1);
+        janelaInterna1.setBounds(1726, 891, 0, 0);
+        getContentPane().add(jDesktopPane1);
+        jDesktopPane1.setBounds(6, 57, 100, 100);
 
         pack();
         setLocationRelativeTo(null);
@@ -372,6 +385,10 @@ public class TelaTabelaVeiculos extends javax.swing.JFrame {
        
     }//GEN-LAST:event_carro1MouseClicked
 
+    private void jBotaoLocarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotaoLocarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBotaoLocarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -415,6 +432,8 @@ public class TelaTabelaVeiculos extends javax.swing.JFrame {
     private javax.swing.JButton jBCalc1;
     private javax.swing.JButton jBCalc2;
     private javax.swing.JButton jBCalc3;
+    private javax.swing.JButton jBotaoLocar;
+    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLQntDias;
     private javax.swing.JLabel jLQntDias1;
     private javax.swing.JLabel jLQntDias2;
@@ -431,6 +450,7 @@ public class TelaTabelaVeiculos extends javax.swing.JFrame {
     private javax.swing.JSpinner jSpinnerDias1;
     private javax.swing.JSpinner jSpinnerDias2;
     private javax.swing.JSpinner jSpinnerDias3;
+    private javax.swing.JInternalFrame janelaInterna1;
     private javax.swing.JTextField jtextVlr1;
     private javax.swing.JTextField jtextVlr2;
     private javax.swing.JTextField jtextVlr3;
