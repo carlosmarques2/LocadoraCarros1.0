@@ -34,6 +34,7 @@ public class telaLogin extends javax.swing.JFrame{
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login de Entrada");
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("URW Gothic L", 1, 36)); // NOI18N
@@ -68,7 +69,7 @@ public class telaLogin extends javax.swing.JFrame{
                 jb_EntrarGerenteActionPerformed(evt);
             }
         });
-        getContentPane().add(jb_EntrarGerente, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 128, 39));
+        getContentPane().add(jb_EntrarGerente, new org.netbeans.lib.awtextra.AbsoluteConstraints(58, 310, 170, 39));
 
         jBClienteEntrar.setText("Cliente Entrar");
         jBClienteEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -81,10 +82,11 @@ public class telaLogin extends javax.swing.JFrame{
                 jBClienteEntrarActionPerformed(evt);
             }
         });
-        getContentPane().add(jBClienteEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 310, 129, 39));
+        getContentPane().add(jBClienteEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 310, 170, 39));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/locadoracarros/Imagens/fundoLogin.jpg"))); // NOI18N
+        jLabel2.setFocusable(false);
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, 390));
 
         pack();

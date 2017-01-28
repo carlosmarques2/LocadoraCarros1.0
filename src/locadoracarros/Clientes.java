@@ -12,22 +12,23 @@ package locadoracarros;
 public class Clientes {
     private String nome;
     private String CPF;
-    private int Idade;
+    private String dataNascimento;
     private String Endereco;
     private String celular;
     
     //Construtor
 
-    public Clientes(String nome, String CPF, int Idade, String celular) {
+    public Clientes(String nome, String CPF, String dataNascimento, String Endereco, String celular) {
         this.nome = nome;
         this.CPF = CPF;
-        this.Idade = Idade;
+        this.dataNascimento = dataNascimento;
+        this.Endereco = Endereco;
         this.celular = celular;
     }
 
+    //Construtor Vazio;
     public Clientes() {
     }
-    
     
     
     //Metodos acessores
@@ -48,6 +49,15 @@ public class Clientes {
         this.CPF = CPF;
     }
 
+    public String getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(String dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+
+    
     public String getEndereco() {
         return Endereco;
     }
@@ -64,15 +74,7 @@ public class Clientes {
         this.celular = celular;
     }
 
-    public int getIdade() {
-        return Idade;
-    }
-
-    public void setIdade(int Idade) {
-        this.Idade = Idade;
-    }
-
-  
+    
 
     
     

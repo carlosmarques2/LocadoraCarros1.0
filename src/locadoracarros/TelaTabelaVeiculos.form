@@ -246,7 +246,7 @@
               <Image iconType="3" name="/locadoracarros/Imagens/vw gol 2014.jpeg"/>
             </Property>
             <Property name="text" type="java.lang.String" value="carroP2"/>
-            <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt; &lt;p&gt;Marca; VW&lt;/p&gt; &lt;p&gt;Modelo: UP&lt;/p&gt; &lt;p&gt;Ano: 2016&lt;/p&gt; &lt;/html&gt;"/>
+            <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt; &lt;p&gt;Marca; VW&lt;/p&gt; &lt;p&gt;Modelo: GOL&lt;/p&gt; &lt;p&gt;Ano: 2016&lt;/p&gt; &lt;/html&gt;"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
                 <EtchetBorder>
@@ -274,21 +274,21 @@
         <Component class="javax.swing.JSpinner" name="jSpinnerDias1">
           <Properties>
             <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-              <SpinnerModel initial="1" maximum="15" numberType="java.lang.Integer" stepSize="1" type="number"/>
+              <SpinnerModel initial="1" maximum="15" minimum="1" numberType="java.lang.Integer" stepSize="1" type="number"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JSpinner" name="jSpinnerDias2">
           <Properties>
             <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-              <SpinnerModel initial="1" maximum="15" numberType="java.lang.Integer" stepSize="1" type="number"/>
+              <SpinnerModel initial="1" maximum="15" minimum="1" numberType="java.lang.Integer" stepSize="1" type="number"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JSpinner" name="jSpinnerDias3">
           <Properties>
             <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-              <SpinnerModel initial="1" maximum="15" numberType="java.lang.Integer" stepSize="1" type="number"/>
+              <SpinnerModel initial="1" maximum="15" minimum="1" numberType="java.lang.Integer" stepSize="1" type="number"/>
             </Property>
           </Properties>
         </Component>
@@ -423,9 +423,6 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Locar"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBotaoLocarActionPerformed"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -451,17 +448,6 @@
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
-      </Layout>
-    </Container>
-    <Container class="javax.swing.JDesktopPane" name="jDesktopPane1">
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="6" y="57" width="-1" height="-1"/>
-        </Constraint>
-      </Constraints>
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-        <Property name="useNullLayout" type="boolean" value="true"/>
       </Layout>
     </Container>
   </SubComponents>

@@ -10,7 +10,7 @@ public class Gerente extends Funcionario{
    private String nomeLogin;
    private String senha;
    ArrayList<Clientes> lst_Clientes;
-   ArrayList<Veiculos>lst_Veiculos;
+   ArrayList<Veiculos> lst_Veiculos;
    
   
    

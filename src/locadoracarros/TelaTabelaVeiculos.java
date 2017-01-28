@@ -57,7 +57,6 @@ public class TelaTabelaVeiculos extends javax.swing.JFrame {
         jBCalc3 = new javax.swing.JButton();
         jBotaoLocar = new javax.swing.JButton();
         janelaInterna1 = new javax.swing.JInternalFrame();
-        jDesktopPane1 = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tabela de Veiculos");
@@ -100,7 +99,7 @@ public class TelaTabelaVeiculos extends javax.swing.JFrame {
 
         carro3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/locadoracarros/Imagens/vw gol 2014.jpeg"))); // NOI18N
         carro3.setText("carroP2");
-        carro3.setToolTipText("<html> <p>Marca; VW</p> <p>Modelo: UP</p> <p>Ano: 2016</p> </html>");
+        carro3.setToolTipText("<html> <p>Marca; VW</p> <p>Modelo: GOL</p> <p>Ano: 2016</p> </html>");
         carro3.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.red, null));
 
         jLabel1.setText("Valor da Diária: R$");
@@ -109,11 +108,11 @@ public class TelaTabelaVeiculos extends javax.swing.JFrame {
 
         jLabel3.setText("Valor da Diária:  R$  ");
 
-        jSpinnerDias1.setModel(new javax.swing.SpinnerNumberModel(1, null, 15, 1));
+        jSpinnerDias1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 15, 1));
 
-        jSpinnerDias2.setModel(new javax.swing.SpinnerNumberModel(1, null, 15, 1));
+        jSpinnerDias2.setModel(new javax.swing.SpinnerNumberModel(1, 1, 15, 1));
 
-        jSpinnerDias3.setModel(new javax.swing.SpinnerNumberModel(1, null, 15, 1));
+        jSpinnerDias3.setModel(new javax.swing.SpinnerNumberModel(1, 1, 15, 1));
 
         jLQntDias.setText("Qnt. Dias");
 
@@ -192,11 +191,6 @@ public class TelaTabelaVeiculos extends javax.swing.JFrame {
         });
 
         jBotaoLocar.setText("Locar");
-        jBotaoLocar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBotaoLocarActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanelCatPopularLayout = new javax.swing.GroupLayout(jPanelCatPopular);
         jPanelCatPopular.setLayout(jPanelCatPopularLayout);
@@ -312,7 +306,7 @@ public class TelaTabelaVeiculos extends javax.swing.JFrame {
         carro1.getAccessibleContext().setAccessibleDescription("");
 
         getContentPane().add(jPanelCatPopular);
-        jPanelCatPopular.setBounds(16, 65, 767, 298);
+        jPanelCatPopular.setBounds(16, 65, 743, 282);
 
         janelaInterna1.setTitle("Locação > Formas de Pagamento");
         janelaInterna1.setVisible(false);
@@ -330,8 +324,6 @@ public class TelaTabelaVeiculos extends javax.swing.JFrame {
 
         getContentPane().add(janelaInterna1);
         janelaInterna1.setBounds(1726, 891, 0, 0);
-        getContentPane().add(jDesktopPane1);
-        jDesktopPane1.setBounds(6, 57, 100, 100);
 
         pack();
         setLocationRelativeTo(null);
@@ -385,10 +377,6 @@ public class TelaTabelaVeiculos extends javax.swing.JFrame {
        
     }//GEN-LAST:event_carro1MouseClicked
 
-    private void jBotaoLocarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotaoLocarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jBotaoLocarActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -433,7 +421,6 @@ public class TelaTabelaVeiculos extends javax.swing.JFrame {
     private javax.swing.JButton jBCalc2;
     private javax.swing.JButton jBCalc3;
     private javax.swing.JButton jBotaoLocar;
-    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLQntDias;
     private javax.swing.JLabel jLQntDias1;
     private javax.swing.JLabel jLQntDias2;
