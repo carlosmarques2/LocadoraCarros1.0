@@ -18,11 +18,10 @@ public class Clientes {
     
     //Construtor
 
-    public Clientes(String nome, String CPF, String dataNascimento, String Endereco, String celular) {
+    public Clientes(String nome, String CPF, String dataNascimento, String celular) {
         this.nome = nome;
         this.CPF = CPF;
         this.dataNascimento = dataNascimento;
-        this.Endereco = Endereco;
         this.celular = celular;
     }
 

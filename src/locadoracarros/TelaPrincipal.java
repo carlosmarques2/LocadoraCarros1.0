@@ -891,7 +891,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
        
         if(tipo.equals("novo")){
-            Clientes c =  new Clientes(jtNome.getText(), jFormattedCPF.getText(), jFormattedDatanascimento.getText(), tipo, acao);
+            Clientes c =  new Clientes(jtNome.getText(), jFormattedCPF.getText(), jFormattedDatanascimento.getText(), jFormattedCelular.getText());
             lst_Clientes.add(c);
 
         } else if(tipo.equals("editar")){
