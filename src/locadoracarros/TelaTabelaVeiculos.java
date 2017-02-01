@@ -69,7 +69,7 @@ public class TelaTabelaVeiculos extends javax.swing.JFrame {
         TituloTelaTabVeiculos.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         TituloTelaTabVeiculos.setText("LocadoraCar - Tabela de Veiculos");
         getContentPane().add(TituloTelaTabVeiculos);
-        TituloTelaTabVeiculos.setBounds(24, 27, 318, 24);
+        TituloTelaTabVeiculos.setBounds(24, 27, 319, 24);
 
         jPanelCatPopular.setBorder(javax.swing.BorderFactory.createTitledBorder("Carros Populares"));
 
@@ -306,7 +306,7 @@ public class TelaTabelaVeiculos extends javax.swing.JFrame {
         carro1.getAccessibleContext().setAccessibleDescription("");
 
         getContentPane().add(jPanelCatPopular);
-        jPanelCatPopular.setBounds(16, 65, 743, 282);
+        jPanelCatPopular.setBounds(16, 65, 741, 267);
 
         janelaInterna1.setTitle("Locação > Formas de Pagamento");
         janelaInterna1.setVisible(false);
